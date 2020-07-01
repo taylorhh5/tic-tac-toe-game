@@ -5,6 +5,7 @@ import Square from './Square.js'
 
 const squareStyle ={
   border: '4px solid darkblue',
+  paddingTop:'2.5rem',
     borderRadius: '10px',
     width: '250px',
     height: '250px',
@@ -16,7 +17,12 @@ const squareStyle ={
 const Board = ({squares, onClick}) => {
   return (
     <div style={squareStyle}>
-      <Square value="1" onClick={() => onClick("dummy value")}/>
+{squares.map((square, i)=> {
+     return   <Square key={i} value={square} onClick={() => onClick(i)}/>
+
+})}
+
+      {/* <Square value="1" onClick={() => onClick("dummy value")}/>
       <Square value="2" onClick={() => onClick("dummy value")}/>
       <Square value="3" onClick={() => onClick("dummy value")}/>
       <Square value="4" onClick={() => onClick("dummy value")}/>
@@ -24,7 +30,7 @@ const Board = ({squares, onClick}) => {
       <Square value="6" onClick={() => onClick("dummy value")}/>
       <Square value="7" onClick={() => onClick("dummy value")}/>
       <Square value="8" onClick={() => onClick("dummy value")}/>
-      <Square value="9" onClick={() => onClick("dummy value")}/>
+      <Square value="9" onClick={() => onClick("dummy value")}/> */}
 
       
     </div>

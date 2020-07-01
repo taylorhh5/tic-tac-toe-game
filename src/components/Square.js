@@ -15,6 +15,8 @@ const buttonstyle ={
   border:'2px solid darkblue',
   fontSize:'50px',
   fontWeight:'800',
+  height:'30px',
+  width:'30px',
   outline:'none',
   cursor:'pointer'
 
