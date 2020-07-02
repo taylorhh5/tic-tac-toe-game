@@ -36,8 +36,8 @@
     transform: rotate(360deg);
   }
 }
-/* 
-.square{
+
+/* .square{
   background-color: white;
   border:1px solid gray;
   float: left;
@@ -55,3 +55,7 @@
 .square:focus{
 outline: none;
 } */
+
+.square-div{
+  border:2px solid black
+}

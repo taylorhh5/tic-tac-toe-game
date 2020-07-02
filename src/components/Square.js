@@ -15,8 +15,8 @@ const buttonstyle ={
   border:'2px solid orange',
   fontSize:'50px',
   fontWeight:'800',
-  height:'30px',
-  width:'30px',
+  height:'100%',
+  width:'100%',
   outline:'none',
   cursor:'pointer'
 
@@ -27,7 +27,7 @@ const Square = ({ playerClick, square }) => {
   // console.log(onclick,"vale")
 
   return (
-    <div>
+    <div className="square-div">
       <button style={buttonstyle} onClick={playerClick}>{square}</button>
       {/* <h1>{value}</h1> */}
     </div>

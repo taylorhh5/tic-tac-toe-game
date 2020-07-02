@@ -4,14 +4,15 @@ import Square from './Square.js'
 //squares=array
 
 const squareStyle ={
-  border: '4px solid red',
+  border: '4px solid black',
   paddingTop:'2.5rem',
     borderRadius: '10px',
-    width: '250px',
-    height: '250px',
+    width: '650px',
+    height: '650px',
     margin: '0 auto',
     display: 'grid',
-    gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)'
+    gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)',
+    background:'lightblue'
 
 }
 const Board = (props) => {
@@ -19,7 +20,7 @@ const Board = (props) => {
   return (
     <div style={squareStyle}>
 {props.boardState.map((square, i)=> {
-  //passing props. the i, index the click is what is getting passed back to the player click function in game.js to know what sqaure is clicked
+  //passing props. the i, index the click is at is getting passed back to the player click function in game.js to know what sqaure is clicked
      return   <Square key={i} square={square} playerClick={() => props.playerClick(i)}/>
 
 })}
