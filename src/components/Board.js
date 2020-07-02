@@ -4,7 +4,7 @@ import Square from './Square.js'
 //squares=array
 
 const squareStyle ={
-  border: '4px solid darkblue',
+  border: '4px solid red',
   paddingTop:'2.5rem',
     borderRadius: '10px',
     width: '250px',
@@ -14,11 +14,13 @@ const squareStyle ={
     gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)'
 
 }
-const Board = ({squares, onClick}) => {
+const Board = (props) => {
+  console.log(props,"props in board")
   return (
     <div style={squareStyle}>
-{squares.map((square, i)=> {
-     return   <Square key={i} value={square} onClick={() => onClick(i)}/>
+{props.boardState.map((square, i)=> {
+  //passing props. the i, index the click is what is getting passed back to the player click function in game.js to know what sqaure is clicked
+     return   <Square key={i} square={square} playerClick={() => props.playerClick(i)}/>
 
 })}
 

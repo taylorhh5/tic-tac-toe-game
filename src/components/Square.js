@@ -12,7 +12,7 @@ import React from "react";
 
 const buttonstyle ={
   background: 'lightblue',
-  border:'2px solid darkblue',
+  border:'2px solid orange',
   fontSize:'50px',
   fontWeight:'800',
   height:'30px',
@@ -22,10 +22,13 @@ const buttonstyle ={
 
 }
 
-const Square = ({ onClick, value }) => {
+const Square = ({ playerClick, square }) => {
+  console.log(square,"square!!!!!!!!!!")
+  // console.log(onclick,"vale")
+
   return (
     <div>
-      <button style={buttonstyle} onClick={onClick}>{value}</button>
+      <button style={buttonstyle} onClick={playerClick}>{square}</button>
       {/* <h1>{value}</h1> */}
     </div>
   );
