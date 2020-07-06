@@ -8,7 +8,7 @@ const styles = {
 };
 
 const Game = () => {
-  //state for the board squares. An array contining 9 empty values, indexed 1-9
+  //state for the board squares. An array containing 9 empty values, indexed 1-9
 
   const [board, setBoard] = useState(Array(9).fill(null));
   console.log(board, "board in game");
@@ -23,14 +23,24 @@ const Game = () => {
     //if user click occupied square or game won, return
     if (winner || boardCopy[i]) return;
     //    if (boardCopy[i]) return;
+//   if (boardCopy[0] && boardCopy[1] && boardCopy[2] && boardCopy[3] && boardCopy[4] && boardCopy[5] && boardCopy[6] && boardCopy[7] && boardCopy[8]){
+      
+//   }
+
+const playeOne = localStorage.getItem("playerOne")
+
+const playerTwo = localStorage.getItem("playerTwo")
+
 
     //Put an x or o in clicked square. ex: board[8] value = whoever clicked on it
-    boardCopy[i] = playerOnesTurn ? "Taylor" : "Beth";
-    console.log(board, "board!!!");
-    console.log(
-      board[1],
-      "i!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    );
+    boardCopy[i] = playerOnesTurn ? playeOne || 
+    'X' : playerTwo || "O";
+    // console.log(board, "board!!!");
+    // console.log(
+    //   board[1],
+    //   "i!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    // );
+
     // boardCopy[i] = "pig";
 
     // set board state
@@ -41,9 +51,9 @@ const Game = () => {
   };
   //   const jumpTo = () => {};
 
-  const renderMoves = () => {
+  const newGame = () => {
     return (
-      <button onClick={() => setBoard(Array(9).fill(null))}>Start Game</button>
+      <button onClick={() => setBoard(Array(9).fill(null))}>New Game</button>
     );
   };
 
@@ -52,12 +62,12 @@ const Game = () => {
       Tic Tac Toe Game
       <Board boardState={board} playerClick={playerClick} />
       <div style={styles}>
-        <p>
-          {winner === "Taylor" ? "The winner of course is " + winner
-            : winner === "Beth" ? winner + " must have cheated!!"
+        <h2>
+          {winner === "Taylor" ? "The winner of course is " + winner+
+"!"            : winner === "Beth" ? winner + " must have cheated!!"
             : "Player turn: " + (playerOnesTurn ? "Taylor" : "Beth")}
-        </p>
-        {renderMoves()}
+        </h2>
+        {newGame()}
       </div>
     </div>
   );

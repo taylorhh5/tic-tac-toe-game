@@ -12,7 +12,8 @@ import React from "react";
 
 const buttonstyle ={
   background: 'lightblue',
-  border:'2px solid orange',
+  // border:'1px solid black',
+
   fontSize:'50px',
   fontWeight:'800',
   height:'100%',
