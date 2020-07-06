@@ -27,7 +27,7 @@ console.log(players.playerOne,"playersubmit")  };
     <>
       <form className="playersForm" onSubmit={handleplayers}>
         <label className ="playersLabel">
-          Player One
+          Player One 
           <input
           className="playersInput"
             type="text"
@@ -39,7 +39,7 @@ console.log(players.playerOne,"playersubmit")  };
           />
         </label>
         <label className ="playersLabel">
-          Player Two
+          Player Two 
         <input
           type="playerTwo"
           name="playerTwo"

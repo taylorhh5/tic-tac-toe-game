@@ -27,13 +27,13 @@ const Game = () => {
       
 //   }
 
-const playeOne = localStorage.getItem("playerOne")
+const playerOne = localStorage.getItem("playerOne")
 
 const playerTwo = localStorage.getItem("playerTwo")
 
 
     //Put an x or o in clicked square. ex: board[8] value = whoever clicked on it
-    boardCopy[i] = playerOnesTurn ? playeOne || 
+    boardCopy[i] = playerOnesTurn ? playerOne || 
     'X' : playerTwo || "O";
     // console.log(board, "board!!!");
     // console.log(
@@ -60,13 +60,16 @@ const playerTwo = localStorage.getItem("playerTwo")
   return (
     <div>
       Tic Tac Toe Game
+      <h1>{winner}</h1>
       <Board boardState={board} playerClick={playerClick} />
       <div style={styles}>
-        <h2>
+        {/* <h2>
           {winner === "Taylor" ? "The winner of course is " + winner+
 "!"            : winner === "Beth" ? winner + " must have cheated!!"
             : "Player turn: " + (playerOnesTurn ? "Taylor" : "Beth")}
-        </h2>
+        </h2> */}
+           <h2>
+           {winner ? 'Winner: ' + winner : null}       </h2>
         {newGame()}
       </div>
     </div>
