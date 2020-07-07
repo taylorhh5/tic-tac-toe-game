@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Board from "./Board.js";
 import { calculateWinner } from "../helper.js";
 
@@ -16,6 +16,10 @@ const Game = () => {
   const [playerOnesTurn, setPlayerOnesTurn] = useState(true);
   const winner = calculateWinner(board);
 
+  const playerOne = localStorage.getItem("playerOne")
+
+const playerTwo = localStorage.getItem("playerTwo")
+
   const playerClick = (i) => {
     // Make a copy of state so we dont mutate the original
     const boardCopy = [...board];
@@ -27,9 +31,7 @@ const Game = () => {
       
 //   }
 
-const playerOne = localStorage.getItem("playerOne")
 
-const playerTwo = localStorage.getItem("playerTwo")
 
 
     //Put an x or o in clicked square. ex: board[8] value = whoever clicked on it
@@ -60,7 +62,7 @@ const playerTwo = localStorage.getItem("playerTwo")
   return (
     <div>
       Tic Tac Toe Game
-      <h1>{winner}</h1>
+      {/* <h1>{playerTwo}</h1> */}
       <Board boardState={board} playerClick={playerClick} />
       <div style={styles}>
         {/* <h2>
@@ -69,7 +71,7 @@ const playerTwo = localStorage.getItem("playerTwo")
             : "Player turn: " + (playerOnesTurn ? "Taylor" : "Beth")}
         </h2> */}
            <h2>
-           {winner ? 'Winner: ' + winner : null}       </h2>
+           {winner ? 'Winner: ' + winner : 'Next Turn: ' + (playerOnesTurn ? playerOne || "Player One" : playerTwo || 'Player Two')}       </h2>
         {newGame()}
       </div>
     </div>
