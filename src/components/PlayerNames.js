@@ -18,13 +18,15 @@ const PlayerNames = () => {
     event.preventDefault();
     localStorage.setItem('playerOne', players.playerOne)
     localStorage.setItem('playerTwo', players.playerTwo)
-
+    window.location.reload()
 
 
 console.log(players.playerOne,"playersubmit")  };
 
   return (
     <>
+
+    <h2>Please choose player names.</h2>
       <form className="playersForm" onSubmit={handleplayers}>
         <label className ="playersLabel">
           Player One 

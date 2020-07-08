@@ -14,7 +14,7 @@ const buttonstyle ={
   background: 'lightblue',
   // border:'1px solid black',
 
-  fontSize:'50px',
+  fontSize:'40px',
   fontWeight:'800',
   height:'100%',
   width:'100%',

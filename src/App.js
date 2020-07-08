@@ -7,7 +7,6 @@ import PlayerNames from './components/PlayerNames.js'
 function App() {
   return (
     <div className="App">
-      <PlayerNames/>
  <Game/>
 
 

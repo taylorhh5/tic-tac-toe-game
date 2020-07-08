@@ -1,14 +1,15 @@
 import React from 'react'
 import Square from './Square.js'
 
+
 //squares=array
 
 const squareStyle ={
   border: '4px solid black',
   paddingTop:'2.5rem',
     borderRadius: '10px',
-    width: '650px',
-    height: '650px',
+    width: '450px',
+    height: '450px',
     margin: '0 auto',
     display: 'grid',
     gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)',

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Board from "./Board.js";
+import PlayerNames from './PlayerNames.js'
 import { calculateWinner } from "../helper.js";
 
 const styles = {
@@ -16,7 +17,17 @@ const Game = () => {
   const [playerOnesTurn, setPlayerOnesTurn] = useState(true);
   const winner = calculateWinner(board);
 
-  const playerOne = localStorage.getItem("playerOne")
+  
+//   useEffect(() => {
+ 
+//     const playerOne = localStorage.getItem("playerOne")
+
+//     const playerTwo = localStorage.getItem("playerTwo")
+ 
+
+//   }, [localStorage.getItem("playerOne")]);
+
+ const playerOne = localStorage.getItem("playerOne")
 
 const playerTwo = localStorage.getItem("playerTwo")
 
@@ -61,7 +72,11 @@ const playerTwo = localStorage.getItem("playerTwo")
 
   return (
     <div>
-      Tic Tac Toe Game
+
+
+      <h1>Tic Tac Toe Game</h1>
+
+      {(!board[0] && !board[1] && !board[2] && !board[3] && !board[4] && !board[5] && !board[6] && !board[7] && !board[8]) || winner ? <PlayerNames/> : null} 
       {/* <h1>{playerTwo}</h1> */}
       <Board boardState={board} playerClick={playerClick} />
       <div style={styles}>
@@ -70,8 +85,23 @@ const playerTwo = localStorage.getItem("playerTwo")
 "!"            : winner === "Beth" ? winner + " must have cheated!!"
             : "Player turn: " + (playerOnesTurn ? "Taylor" : "Beth")}
         </h2> */}
+          {/* <h2>
+           {board[1]!== null ?  " wins!" : "Please pick player names"}       </h2> */}
+
+           {/* {board.map((square, i)=> {
+              if (board[0] && board[1] &&board[0] && board[1])
+
+     return   <h1>here</h1>
+
+})} */}
+
+
+               
+
+
+
            <h2>
-           {winner ? 'Winner: ' + winner : 'Next Turn: ' + (playerOnesTurn ? playerOne || "Player One" : playerTwo || 'Player Two')}       </h2>
+           {winner ? winner + " wins!" : 'Next Turn: ' + (playerOnesTurn ? playerOne || "Player One" : playerTwo || 'Player Two')}       </h2>
         {newGame()}
       </div>
     </div>
