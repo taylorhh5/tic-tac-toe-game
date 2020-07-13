@@ -23,6 +23,13 @@ const Game = () => {
   const [playerOnesTurn, setPlayerOnesTurn] = useState(true);
   const winner = calculateWinner(board);
 
+
+
+
+  
+  const score1 = localStorage.getItem("score1")
+  const score2 = localStorage.getItem("score2")
+
   
 //   useEffect(() => {
  
