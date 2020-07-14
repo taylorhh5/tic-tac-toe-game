@@ -6,7 +6,7 @@ import Square from './Square.js'
 
 const squareStyle ={
   border: '4px solid black',
-  paddingTop:'2.5rem',
+  // paddingTop:'2.5rem',
     borderRadius: '10px',
     width: '450px',
     height: '450px',
@@ -19,7 +19,9 @@ const squareStyle ={
 const Board = (props) => {
   console.log(props,"props in board")
   return (
+   
     <div style={squareStyle}>
+      
 {props.boardState.map((square, i)=> {
   //passing props. the i, index the click is at is getting passed back to the player click function in game.js to know what sqaure is clicked
      return   <Square key={i} square={square} playerClick={() => props.playerClick(i)}/>

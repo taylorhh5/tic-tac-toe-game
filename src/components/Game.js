@@ -9,7 +9,8 @@ const styles = {
 };
 
 const nameStyles = {
-    color:"blue"
+    color:"blue",
+    fontWeight:"600"
   };
 
 
