@@ -13,6 +13,13 @@ const nameStyles = {
     fontWeight:"600"
   };
 
+  const vsnameStyles = {
+    color:"red",
+    fontWeight:"600"
+  };
+  const gameTitle={
+    textDecoration:"underline"
+  }
 
 
 const Game = () => {
@@ -88,8 +95,8 @@ const playerTwo = localStorage.getItem("playerTwo")
     <div>
 
 
-      <h1>Tic Tac Toe Game</h1>
-      <h2 style={nameStyles}>{playerOne} VS {playerTwo}</h2>
+      <h1 style={gameTitle}>Tic Tac Toe</h1>
+      <h2 style={nameStyles}>{playerOne} <span style={vsnameStyles}>VS</span> {playerTwo}</h2>
 
       {(!board[0] && !board[1] && !board[2] && !board[3] && !board[4] && !board[5] && !board[6] && !board[7] && !board[8]) || winner ? <PlayerNames/> : null} 
       {/* <h1>{playerTwo}</h1> */}
