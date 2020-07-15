@@ -59,3 +59,19 @@ outline: none;
 .square-div{
   border:1px solid black
 }
+
+.playersLabel{
+  /* border:1px solid red; */
+  margin:2rem;
+}
+
+.playersForm{
+  /* border:1px solid blue; */
+  background-color: lightblue;
+ 
+}
+
+.playersInput{
+  /* border:1px solid yellow; */
+  margin:.5rem
+}

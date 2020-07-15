@@ -11,6 +11,7 @@ const squareStyle ={
     width: '450px',
     height: '450px',
     margin: '0 auto',
+    marginTop:"1.1rem",
     display: 'grid',
     gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)',
     background:'lightblue'

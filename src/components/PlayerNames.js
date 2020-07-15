@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import '../App.css';
+
 
 const PlayerNames = () => {
   const names = {
@@ -29,7 +31,7 @@ console.log(players.playerOne,"playersubmit")  };
     <h2>Please choose player names.</h2>
       <form className="playersForm" onSubmit={handleplayers}>
         <label className ="playersLabel">
-          Player One 
+          Player One
           <input
           className="playersInput"
             type="text"
@@ -42,7 +44,8 @@ console.log(players.playerOne,"playersubmit")  };
         </label>
         <label className ="playersLabel">
           Player Two 
-        <input
+        <input 
+         className="playersInput"
           type="playerTwo"
           name="playerTwo"
           value={players.playerTwo}
