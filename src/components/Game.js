@@ -95,8 +95,8 @@ const playerTwo = localStorage.getItem("playerTwo")
     <div>
 
 
-      <h1 style={gameTitle}>Tic Tac Toe</h1>
-      <h2 style={nameStyles}>{playerOne} <span style={vsnameStyles}>VS</span> {playerTwo}</h2>
+      {<h1 style={gameTitle}>Tic Tac Toe</h1>}
+      {playerOne ? <h2 style={nameStyles}>{playerOne} <span style={vsnameStyles}>VS</span> {playerTwo}</h2> : null}
 
       {(!board[0] && !board[1] && !board[2] && !board[3] && !board[4] && !board[5] && !board[6] && !board[7] && !board[8]) || winner ? <PlayerNames/> : null} 
       {/* <h1>{playerTwo}</h1> */}
@@ -122,7 +122,7 @@ const playerTwo = localStorage.getItem("playerTwo")
 
 
 
-           <h2>
+           <h2 style={{color:"blue"}}>
            {winner ? winner + " wins!" : 'Next Turn: ' + (playerOnesTurn ? playerOne || "Player One" : playerTwo || 'Player Two')}       </h2>
         {newGame()}
       </div>
