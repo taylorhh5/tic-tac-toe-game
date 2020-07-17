@@ -25,10 +25,15 @@ const PlayerNames = () => {
 
 console.log(players.playerOne,"playersubmit")  };
 
+const playerOneName = localStorage.getItem('playerOne')
+const playerTwoName = localStorage.getItem('playerTwo')
+
+
+
   return (
     <>
 
-    <h2>Please choose player names.</h2>
+    {playerOneName ? <h2>Choose new names or continue with {playerOneName} and {playerTwoName}.  </h2>:<h2>Please choose player names.</h2>}
       <form className="playersForm" onSubmit={handleplayers}>
         <label className ="playersLabel">
           Player One
